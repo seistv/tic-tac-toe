@@ -1,0 +1,157 @@
+/* General Body Styling */
+body {
+    background-color: #2c3e50; /* Dark background */
+    color: #ecf0f1; /* Light text */
+    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Game Container */
+.game-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #34495e; /* Darker background */
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+/* Board Styling */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); /* Ensures rows are equal height */
+    gap: 10px;
+    margin: 20px 0;
+    justify-items: center; /* Centers the cells horizontally */
+    align-items: center; /* Centers the cells vertically */
+}
+
+/* Cell Styling */
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #7f8c8d; /* Darker cells */
+    border-radius: 12px;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+/* Hover Effect for Cells */
+.cell:hover {
+    background-color: #95a5a6; /* Slightly lighter on hover */
+    transform: scale(1.05);
+}
+
+/* Styling for X and O */
+.cell.X {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #e74c3c; /* Red for X */
+    font-size: 3rem;
+    transform: rotate(-15deg); /* Add some rotation for the X */
+}
+
+.cell.O {
+    font-family: 'Roboto', sans-serif;
+    color: #3498db; /* Blue for O */
+    font-size: 3rem;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2; /* Adjust line-height for perfect centering */
+    background-color: transparent; /* Make background transparent */
+    border: 4px solid #3498db; /* Blue border for the O */
+}
+
+/* Status Text */
+.status {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    background-color: #3498db; /* Blue button */
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+/* Controls (for Select Options) */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* Select Styling */
+select {
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+  
+    .game-container {
+        padding: 15px;
+    }
+}
+
+/* Winner Highlight */
+.cell.winner {
+    background-color: #f39c12; /* Yellow for winner */
+    transform: scale(1.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.winner {
+    background-color: #f39c12 !important;
+    animation: highlight 1s ease-out forwards;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: rgba(243, 156, 18, 0.5);
+    }
+    100% {
+        background-color: rgba(243, 156, 18, 1);
+    }
+}
